@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- EDIT: your name + one-line description for search engines -->
+  <title>Niklas Vetterer</title>
+  <meta name="description" content="Personal website of Niklas Vetterer">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="site-title" href="index.html">Niklas Vetterer</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="research.html">Research</a>
+      <a href="assets/CV_Vetterer.pdf">CV</a>
+    </nav>
+  </div>
+</header>
+
+
+<main class="container main-layout">
+
+  <aside class="profile-card" aria-label="Photo">
+    <figure class="portrait">
+      <img
+        src="assets/img.jpg" 
+        width="400"
+        height="500"
+        alt="Portrait of Niklas Vetterer"
+        onerror="this.closest('.portrait').classList.add('is-missing'); this.remove();"
+      >
+    </figure>
+     <section class="contact-block" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact </h2>
+      <!-- EDIT: email, twitter/social, phone, office address -->
+      <p class="contact-line">E-Mail: <a href="mailto:niklas.vetterer@iab.de">niklas.vetterer@iab.de</a>
+                <a href="mailto:niklas.vetterer@uni-konstanz.de">niklas.vetterer@uni-konstanz.de</a>
+      </p>
+      <p class="contact-line"><a target="_blank" href="https://iab.de/mitarbeiter/vetterer-niklas/">My homepage at the IAB</a></p>
+      <p class = "contact-line"><a target="_blank" href="https://scholar.google.com/citations?user=fCALR6wAAAAJ&hl=de">Google Scholar</a></p>
+    </section>
+  </aside>
+ 
+
+  <section aria-labelledby="intro-heading">
+    <h1 id="intro-heading">Niklas Vetterer</h1>
+<!-- Short Introduction -->
+    <p>
+      I am a PhD candidate in economics at the Institute for Employment Research <a target="_blank" href="https://www.iab.de/">(IAB)</a> as part of the GradAB program, and at the University of Konstanz under 
+      the supervision of <a  target="_blank" href="https://sebastian-findeisen.com/"> Prof. Sebastian Findeisen </a> and 
+      <a  target="_blank" href="https://www.wiwi.uni-konstanz.de/schwerdt/personen/prof-dr-guido-schwerdt/"> Prof. Guido Schwerdt</a>.
+    </p>
+    
+    <!-- Research Agenda -->
+    <p>
+      My research focuses on labor economics and inequality, with a focus on intergenerational mobility. <br>
+      I use large-scale German administrative data to study how family background shapes labor market careers, and how firms, local labor markets, parental networks, and early-career conditions shape intergenerational mobility.
+   </p>
+
+   <!-- Links to rest of page -->
+    <p>
+      You can find more information about my research <a href="research.html">here</a>, and my CV is available <a href="assets/CV_Vetterer.pdf">here</a>.
+    </p>
+
+  </section>
+
+
+</main>
+
+<section class="container page-section" aria-labelledby="news-heading">
+  <h2 id="news-heading">News and Upcoming Presentations</h2>
+  <ul class="news-list">
+  <li><time>September 2026</time><span>Excited to present <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
+      at the <a target="_blank" href="https://www.socialpolitik.de/en/termin/annual-conference-2026"> VfS Annual Conference 2026</a> </span></li>
+  </ul>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <!-- EDIT: your name; the year updates automatically -->
+    <p>&copy; <span id="year"></span> Niklas Vetterer. Last updated August 2026.</p>
+  </div>
+</footer>
+
+
+<!-- Header JavaScript -->
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 0);
+  onScroll(); // set correct state on load
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+</body>
+</html>
