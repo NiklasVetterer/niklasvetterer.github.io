@@ -74,22 +74,44 @@
 
 <section class="container page-section" aria-labelledby="news-heading">
   <h2 id="news-heading">News and Upcoming Presentations</h2>
-  <ul class="news-list">
-    <li><time>September 2026</time><span>Presenting <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
-      at the <a target="_blank" href="https://www.socialpolitik.de/en/termin/annual-conference-2026"> VfS Annual Conference 2026</a> </span>
+  <div class="news-scroll" tabindex="0" aria-label="News entries, scroll for more">
+    <ul class="news-list">
+    
+    <li>
+      <time>November 2026</time><span>Presenting <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
+      at the <a target="_blank" href="https://www.wu.ac.at/en/ineq/ws26"> 3rd Workshop on Wealth Inequality, Economic Mobility and Labor Markets </a> </span>
     </li>
 
-    <li>
-      <time>September 2026</time><span>Presenting <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
-      at the <a target="_blank" href="https://opportunityinsights.org/updates/2026-conference-on-economic-mobility/"> 2026 Conference on Economic Mobility hosted by Opportunity Insights </a> </span>
-    </li>
 
     <li>
       <time>October 2026</time><span>Presenting <a href="research.html#netw">Inherited Access: Parental Workplace and the Formation of Labor Market Careers</a>
       at the IAB & VPET-ECON Conference on "Vocational and Professional Education and Training"</span>
     </li>
+
+
+    <li>
+      <time>October 2026</time><span>Presenting <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
+      at the <a target="_blank" href="https://docs.google.com/spreadsheets/d/1wGIQPnqIEQkiupWEc0t0tkkEyHI8ndEdkuNp-LQFFL8/edit?gid=0#gid=0"> “Micro and Macro Perspective of the Labor Market” Virtual Reading Group/Workshop at Duke </a> </span>
+    </li>
+
+
+
+     <li>
+      <time>September 2026</time><span>Presenting <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
+      at the <a target="_blank" href="https://opportunityinsights.org/updates/2026-conference-on-economic-mobility/"> 2026 Conference on Economic Mobility hosted by Opportunity Insights </a> </span>
+    </li>
+
+
+    <li><time>September 2026</time><span>Presenting <a href="research.html#AHO">Access to High-Opportunity Workplaces and Upward Mobility</a>
+      at the <a target="_blank" href="https://www.socialpolitik.de/en/termin/annual-conference-2026"> VfS Annual Conference 2026</a> </span>
+    </li>
+
+   
+
+    
   
   </ul>
+  </div>
 </section>
 
 
@@ -97,7 +119,7 @@
 <footer class="site-footer">
   <div class="container">
     <!-- EDIT: your name; the year updates automatically -->
-    <p>&copy; <span id="year"></span> Niklas Vetterer. Last updated August 2026.</p>
+    <p>&copy; <span id="year"></span> Niklas Vetterer. Last updated October 2026.</p>
   </div>
 </footer>
 
@@ -110,6 +132,24 @@
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 0);
   onScroll(); // set correct state on load
   window.addEventListener('scroll', onScroll, { passive: true });
+</script>
+
+
+<script>
+  const newsScroll = document.querySelector('.news-scroll');
+  const newsList = newsScroll.querySelector('.news-list');
+  const newsItems = newsList.children;
+  const newsVisible = 3; // number of entries shown before scrolling
+
+  const setNewsHeight = () => {
+    if (newsItems.length <= newsVisible) return;
+    const listTop = newsList.getBoundingClientRect().top;
+    const lastVisibleBottom = newsItems[newsVisible - 1].getBoundingClientRect().bottom;
+    newsScroll.style.maxHeight = Math.ceil(lastVisibleBottom - listTop) + 'px';
+  };
+
+  setNewsHeight();
+  window.addEventListener('resize', setNewsHeight, { passive: true });
 </script>
 
 </body>
